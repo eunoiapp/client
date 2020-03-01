@@ -7,6 +7,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.location.Location
+import android.location.LocationListener
 import android.os.Binder
 import android.os.Build
 import android.os.IBinder
@@ -29,10 +30,10 @@ class LocationService : Service() {
 
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.notification_icon_background)
-            .setContentTitle("My notification")
-            .setContentText("Much longer text that cannot fit one line...")
-            .setStyle(NotificationCompat.BigTextStyle()
-                .bigText("Much longer text that cannot fit one line..."))
+            .setContentTitle("Eunoiapp location tracking")
+            //.setContentText("Much longer text that cannot fit one line...")
+            //.setStyle(NotificationCompat.BigTextStyle()
+            //    .bigText("Much longer text that cannot fit one line..."))
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
         notificationManager!!.notify(NOTIFICATION_ID, builder.build())
@@ -66,6 +67,10 @@ class LocationService : Service() {
             val location = "Home"
             println(location)
         }
+
+
     }
+
+
 
 }

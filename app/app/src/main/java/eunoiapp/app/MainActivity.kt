@@ -7,8 +7,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import com.google.android.gms.location.LocationServices
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity()  {
 
     private val EUNOIAPP_NAME_KEY = "EUNOIAPP_KEY"
 
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this, LocationService::class.java)
         startService(intent)
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
     }
 
     fun onNameClick(v: View) {
